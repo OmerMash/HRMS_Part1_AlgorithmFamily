@@ -9,9 +9,17 @@ public class Person implements Serializable {
     String ID;
     String name;
     String profession;
-    String experience_y;
+    int experience_y;
 
-    public Person(String full_name_tf, int age_tf, String id_tf, String profession_tf, String YOE_tf ) {
+    @Override
+    public String toString() {
+        return ID + " " + name + " " + age + " " + profession + " " + experience_y;
+    }
+    public int getAge(){ return  age; }
+    public String getProfession(){ return  profession; }
+    public int getExperience_y(){ return  experience_y; }
+
+    public Person(String full_name_tf, int age_tf, String id_tf, String profession_tf, int YOE_tf ) {
         name = full_name_tf;
         age = age_tf;
         ID = id_tf;
@@ -19,11 +27,5 @@ public class Person implements Serializable {
         experience_y = YOE_tf;
         personCounter++;
     }
-    @Override
-    public String toString() {
-        return ID + " " + name + " " + age + " " + profession + " " + experience_y;
-    }
-
-    public int getAge(){ return  age; }
 
 }
